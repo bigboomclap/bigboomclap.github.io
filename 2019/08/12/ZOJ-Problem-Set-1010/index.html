@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  ZOJ Problem Set - 1010 |   Qinli </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header-wrapper">
+
+  <nav class="inner">
+    <div class="title">
+      <a href="/">
+        <img class="logo" src="/images/logo.png">
+      </a>
+    </div>
+
+    <ul class="menu">
+      
+      
+      <li class="item">
+        <a class="link" id="menu-home" href="/">
+          <i class="iconfont icon-home">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-archives" href="/archives">
+          <i class="iconfont icon-archives">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-tags" href="/tags">
+          <i class="iconfont icon-tags">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-about" href="/about">
+          <i class="iconfont icon-about">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-search">
+          <i class="iconfont icon-search">
+        </i></a>
+        
+
+        
+      
+    </li></ul>
+  </nav>
+</header>
+
+<header class="mobile-header-wrapper">
+  <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+</header>   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post slideDownMin">
+  
+	
+<div class="header">
+		<p class="title">	
+			ZOJ Problem Set - 1010
+		</p>
+		<div class="info">	
+			<time>
+				Aug 12, 2019
+			</time>
+
+			
+			
+				<i class="iconfont icon-words"></i>
+				<span class="words">4409
+				</span>
+			
+		</div>
+</div> 
+	
+
+    <script type="text/x-mathjax-config">
+        var post = document.getElementsByClassName("post")[0];  
+        MathJax.Hub.Config({
+            showProcessingMessages: false,
+            messageStyle: "none",    
+            tex2jax: {
+                inlineMath:  [ ["$", "$"] , ["\\(","\\)"]],
+                displayMath: [ ["$$","$$"] , ["\\[","\\]"]],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+            },
+            "HTML-CSS": {            
+                showMathMenu: false
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,post]);
+    </script>
+    <style>.MathJax{outline:0;}</style>
+
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ 
+
+	  <div class="typo post-content ">
+
+		
+
+			
+					<p>ZOJ Problem Set - 1010</p>
+<p>Area</p>
+<p>Jerry, a middle school student, addicts himself to mathematical research. Maybe the problems he has thought are really too easy to an expert. But as an amateur, especially as a 15-year-old boy, he had done very well. He is so rolling in thinking the mathematical problem that he is easily to try to solve every problem he met in a mathematical way. One day, he found a piece of paper on the desk. His younger sister, Mary, a four-year-old girl, had drawn some lines. But those lines formed a special kind of concave polygon by accident as Fig. 1 shows.</p>
+<p><img src="http://acm.zju.edu.cn/onlinejudge/showImage.do?name=0000%2F1010%2F1010-1.jpg" alt="img"><br>Fig. 1 The lines his sister had drawn</p>
+<p>“Great!” he thought, “The polygon seems so regular. I had just learned how to calculate the area of triangle, rectangle and circle. I’m sure I can find out how to calculate the area of this figure.” And so he did. First of all, he marked the vertexes in the polygon with their coordinates as Fig. 2 shows. And then he found the result–0.75 effortless.</p>
+<p><img src="http://acm.zju.edu.cn/onlinejudge/showImage.do?name=0000%2F1010%2F1010-2.jpg" alt="img"><br>Fig.2 The polygon with the coordinates of vertexes</p>
+<p>Of course, he was not satisfied with the solution of such an easy problem. “Mmm, if there’s a random polygon on the paper, then how can I calculate the area?” he asked himself. Till then, he hadn’t found out the general rules on calculating the area of a random polygon. He clearly knew that the answer to this question is out of his competence. So he asked you, an erudite expert, to offer him help. The kind behavior would be highly appreciated by him.</p>
+<p><strong>Input</strong></p>
+<p>The input data consists of several figures. The first line of the input for each figure contains a single integer n, the number of vertexes in the figure. (0 &lt;= n &lt;= 1000).</p>
+<p>In the following n lines, each contain a pair of real numbers, which describes the coordinates of the vertexes, (xi, yi). The figure in each test case starts from the first vertex to the second one, then from the second to the third, ���� and so on. At last, it closes from the nth vertex to the first one.</p>
+<p>The input ends with an empty figure (n = 0). And this figure not be processed.</p>
+<p><strong>Output</strong></p>
+<p>As shown below, the output of each figure should contain the figure number and a colon followed by the area of the figure or the string “Impossible”.</p>
+<p>If the figure is a polygon, compute its area (accurate to two fractional digits). According to the input vertexes, if they cannot form a polygon (that is, one line intersects with another which shouldn’t be adjoined with it, for example, in a figure with four lines, the first line intersects with the third one), just display “Impossible”, indicating the figure can’t be a polygon. If the amount of the vertexes is not enough to form a closed polygon, the output message should be “Impossible” either.</p>
+<p>Print a blank line between each test cases.</p>
+<p><strong>Sample Input</strong></p>
+<p>5<br>0 0<br>0 1<br>0.5 0.5<br>1 1<br>1 0<br>4<br>0 0<br>0 1<br>1 0<br>1 1<br>0</p>
+<p><strong>Output for the Sample Input</strong></p>
+<p>Figure 1: 0.75</p>
+<p>Figure 2: Impossible</p>
+<p>`</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_n = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Pt</span> &#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y;</span><br><span class="line">	Pt() &#123;&#125;</span><br><span class="line">	Pt(<span class="keyword">double</span> a, <span class="keyword">double</span> b) &#123;</span><br><span class="line">		x = a; y = b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">Pt p[max_n];</span><br><span class="line">Pt <span class="keyword">operator</span> -(Pt p, Pt p1) &#123;</span><br><span class="line">	<span class="keyword">return</span> Pt(p.x - p1.x, p.y - p1.y);</span><br><span class="line">&#125;</span><br><span class="line">Pt <span class="keyword">operator</span> + (Pt p, Pt p1) &#123;</span><br><span class="line">	<span class="keyword">return</span> Pt(p.x + p1.x, p.y + p1.y);</span><br><span class="line">&#125;</span><br><span class="line">Pt <span class="keyword">operator</span> * (<span class="keyword">double</span> A, Pt p1) &#123;</span><br><span class="line">	<span class="keyword">return</span> Pt(A * p1.x, A * p1.y);</span><br><span class="line">&#125;</span><br><span class="line">Pt <span class="keyword">operator</span> * (Pt p1, <span class="keyword">double</span> A) &#123;</span><br><span class="line">	<span class="keyword">return</span> Pt(A * p1.x, A * p1.y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">det</span><span class="params">(Pt a, Pt b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x * b.y - a.y * b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// = 0 表示,相交于端点也是认定为相交</span></span><br><span class="line"><span class="comment">//https://www.cnblogs.com/g0feng/archive/2012/05/18/2508293.html</span></span><br><span class="line"><span class="comment">/*线段相交模板</span></span><br><span class="line"><span class="comment">应用：</span></span><br><span class="line"><span class="comment">1.判断两个线段相交</span></span><br><span class="line"><span class="comment">2.判断线段与直线相交</span></span><br><span class="line"><span class="comment">3.判断点在矩形内 */</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">SegmentProperIntersection</span><span class="params">(Pt s1, Pt e1, Pt s2, Pt e2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">double</span> c1 = det(s2 - s1, e1 - s1), c2 = det(e1 - s1, e2 - s1);</span><br><span class="line">	<span class="keyword">double</span> c3 = det(s1 - s2, e2 - s2), c4 = det(e2 - s2, e1 - s2);</span><br><span class="line">	<span class="keyword">if</span> (c1 * c2 &gt;= <span class="number">0</span> &amp;&amp; c3 * c4 &gt;= <span class="number">0</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">havecross</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//从第 三 条线段开始, 一直到第 N-1 条线段</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (SegmentProperIntersection(p[i], p[i + <span class="number">1</span>], p[j - <span class="number">1</span>], p[j])) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//判断最后一条线段p[0]_p[n-1]</span></span><br><span class="line">	<span class="comment">//从第二条线段一直比较到第 n-2 条线段</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">2</span>; i++) &#123; <span class="comment">//p[i]__p[i+1]</span></span><br><span class="line">		<span class="keyword">if</span> (SegmentProperIntersection(p[<span class="number">0</span>], p[n - <span class="number">1</span>], p[i], p[i + <span class="number">1</span>])) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Area</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">double</span> area = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">		area += det(p[i]-p[<span class="number">0</span>],p[i+<span class="number">1</span>]-p[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">fabs</span>(area)/<span class="number">2.0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> test = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n == <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">double</span> x, y;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">			p[i] = Pt(x, y);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (n &lt; <span class="number">3</span>)&#123; <span class="comment">//如果小于三个点, 肯定不能求面积</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Figure %d: Impossible\n"</span>, ++test);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (havecross()) &#123;</span><br><span class="line">			<span class="comment">/*printf("Figure %d: Impossible\n", ++test);</span></span><br><span class="line"><span class="comment">			printf("\n");*/</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Figure "</span> &lt;&lt; ++test &lt;&lt; <span class="string">": Impossible\n"</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Figure %d: %.2lf"</span>, ++test, Area());</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  	
+					
+	  </div>     
+	  
+
+	<div class="bottom">
+  <div class="other">
+    <div class="meta">
+      
+
+      
+      <i class="iconfont icon-tag"></i>
+      <a class="tag-link" href="/tags/Computing-Geometry/">Computing Geometry</a>
+      
+    </div>
+
+    <div class="operate">
+      
+      <span class="text">Share</span>
+      <ul class="share">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		item"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		item"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		item"></li>		
+   	   
+</ul>	
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      
+    </div>
+  </div>
+
+
+  
+  <nav class="nav">
+    <div class="link">
+      
+      <a href="/2019/08/12/template-of-Computing-Geometry/" class="link-wrap">
+        <strong class="caption">older</strong>
+        
+        <span class="title">
+          template of Computing Geometry
+        </span>
+      </a>
+      
+    </div>
+    <div class="link">
+      
+    </div>
+  </nav>
+  
+</div> 
+	
+<div class="comment">
+
+    
+
+    <div id="comment">
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src="//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js"></script>
+
+    <script>
+        new Valine({
+            el: '#comment',
+            notify: false,
+            verify: false,
+            app_id: 'cFM0eCo0CQ9xmBXmHi1eltol-gzGzoHsz',
+            app_key: 'oh9tizsnvV2vNvWgqEvoNtQO',
+            path: window.location.pathname,
+            avatar: 'mm',
+            guest_info: ['nick', 'mail']
+        });
+    </script>
+    
+</div>	
+</article>
+
+          </div> 
+      </div>            
+    
+        <i id="toTop" class="iconfont icon-backtotop"></i>
+
+  
+    <div class="none" id="search">
+    <div class="header">
+        <input type="text" placeholder="Typing Something here." id="search-input" class="input">
+        
+        <i id="search-cancel" class="iconfont icon-cancel"></i>
+    </div>
+
+    <div id="search-result" class="result"></div>
+</div>
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">Home
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">Archives
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">Tags
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">About
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">Search </a>                 
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+<footer class="footer">
+	<div class="inner">
+		<div class="copyright">
+			&copy;
+			
+			2019
+			Qinli
+
+			<br>
+			By <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>
+	</div>
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
+</html>

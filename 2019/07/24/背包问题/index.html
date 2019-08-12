@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
   
-  <title>  牛客多校Round_2 F题 |   Qinli </title>
+  <title>  背包问题 |   Qinli </title>
 
  
   
@@ -88,17 +88,17 @@
 	
 <div class="header">
 		<p class="title">	
-			牛客多校round_2 F题
+			背包问题
 		</p>
 		<div class="info">	
 			<time>
-				Jul 21, 2019
+				Jul 24, 2019
 			</time>
 
 			
 			
 				<i class="iconfont icon-words"></i>
-				<span class="words">854
+				<span class="words">588
 				</span>
 			
 		</div>
@@ -131,8 +131,9 @@
 		
 
 			
-					<p><img src="https://bigboomclap.oss-cn-shenzhen.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/006mSGrUly1g57j8kxa7cj30q10nj0u8.jpg" alt></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_n = <span class="number">40</span>;</span><br><span class="line">ll val[max_n][max_n];</span><br><span class="line">ll cost = <span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> state,ll cost,<span class="keyword">int</span> pre,<span class="keyword">int</span> got)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (got + got == n) &#123;</span><br><span class="line">		ans = max(ans, cost); <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n - pre - <span class="number">1</span> + got &lt; n / <span class="number">2</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="comment">//对于构不成n/2的情况，直接进行剪枝</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> next = pre + <span class="number">1</span>; next &lt; n; next++) &#123;</span><br><span class="line">	<span class="comment">//对于每一个next分支，都进行了递归，所以包含了所有情况</span></span><br><span class="line">		ll next_cost = cost;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> ((state &gt;&gt; i) &amp; <span class="number">1</span>)</span><br><span class="line">				next_cost -= val[next][i];</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				next_cost += val[next][i];</span><br><span class="line">		&#125;</span><br><span class="line">		solve(state | (<span class="number">1</span> &lt;&lt; next), next_cost, next, got + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	n &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">			scanf_s( <span class="string">"%lld"</span>,&amp;val[i][j]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		cost += val[<span class="number">0</span>][i];</span><br><span class="line">	solve((<span class="number">1</span>&lt;&lt;<span class="number">0</span>), cost, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+					<p>最基础的背包问题：</p>
+<p>思路：从第1个开始往前选</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_N = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> dp[max_N][max_N];</span><br><span class="line"><span class="keyword">int</span> W, n;</span><br><span class="line"><span class="keyword">int</span> v[max_N], w[max_N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= W; i++)</span><br><span class="line">		dp[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = W; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (j &lt; w[i])</span><br><span class="line">				dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - w[i]] + v[i]);</span><br><span class="line">		&#125;背包问题</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; dp[n][W] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; W;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4 5</span></span><br><span class="line"><span class="comment">2 3 1 2 3 4 2 2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
   	
 					
@@ -146,7 +147,7 @@
 
       
       <i class="iconfont icon-tag"></i>
-      <a class="tag-link" href="/tags/brute-force/">brute force</a>
+      <a class="tag-link" href="/tags/dynamic-programming/">dynamic programming</a>
       
     </div>
 
@@ -182,22 +183,22 @@
   <nav class="nav">
     <div class="link">
       
-      <a href="/2019/07/16/Blocks/" class="link-wrap">
+      <a href="/2019/07/23/Largest-Rectangle-In-a-Histigram/" class="link-wrap">
         <strong class="caption">older</strong>
         
         <span class="title">
-          Blocks
+          Largest Rectangle In a Histigram
         </span>
       </a>
       
     </div>
     <div class="link">
       
-      <a href="/2019/07/23/lafsdf/" class="link-wrap">
+      <a href="/2019/07/27/Largest-Rectangle-In-a-Histigram plus/" class="link-wrap">
         <strong class="caption">newer</strong>
         
         <span class="title">
-          lafsdf
+          Largest Rectangle In a Histigram Plus
         </span>
       </a>
       
