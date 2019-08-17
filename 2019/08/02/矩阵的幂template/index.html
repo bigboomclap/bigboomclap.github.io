@@ -98,7 +98,7 @@
 			
 			
 				<i class="iconfont icon-words"></i>
-				<span class="words">1254
+				<span class="words">1253
 				</span>
 			
 		</div>
@@ -132,7 +132,6 @@
 
 			
 					<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll mod;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">matrix</span>&#123;</span></span><br><span class="line">    ll a[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    matrix()&#123;&#125;</span><br><span class="line">    matrix(<span class="keyword">int</span> k)&#123;</span><br><span class="line">        n = k;</span><br><span class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) a[i][i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    matrix <span class="keyword">operator</span> * (<span class="keyword">const</span> matrix &amp;B)&#123;</span><br><span class="line">        <span class="function">matrix <span class="title">C</span><span class="params">(n)</span></span>;</span><br><span class="line">        C.a[<span class="number">0</span>][<span class="number">0</span>] = (a[<span class="number">0</span>][<span class="number">0</span>] * B.a[<span class="number">0</span>][<span class="number">0</span>] % mod + a[<span class="number">0</span>][<span class="number">1</span>] * B.a[<span class="number">1</span>][<span class="number">0</span>] % mod) % mod;</span><br><span class="line">        C.a[<span class="number">0</span>][<span class="number">1</span>] = (a[<span class="number">0</span>][<span class="number">0</span>] * B.a[<span class="number">0</span>][<span class="number">1</span>] % mod + a[<span class="number">0</span>][<span class="number">1</span>] * B.a[<span class="number">1</span>][<span class="number">1</span>] % mod) % mod;</span><br><span class="line">        C.a[<span class="number">1</span>][<span class="number">0</span>] = (a[<span class="number">1</span>][<span class="number">0</span>] * B.a[<span class="number">0</span>][<span class="number">0</span>] % mod + a[<span class="number">1</span>][<span class="number">1</span>] * B.a[<span class="number">1</span>][<span class="number">0</span>] % mod) % mod;</span><br><span class="line">        C.a[<span class="number">1</span>][<span class="number">1</span>] = (a[<span class="number">1</span>][<span class="number">0</span>] * B.a[<span class="number">0</span>][<span class="number">1</span>] % mod + a[<span class="number">1</span>][<span class="number">1</span>] * B.a[<span class="number">1</span>][<span class="number">1</span>] % mod) % mod;</span><br><span class="line">        <span class="keyword">return</span> C;</span><br><span class="line">    &#125;</span><br><span class="line">    matrix <span class="keyword">operator</span> ^ (ll k)&#123;</span><br><span class="line">        matrix A = (*<span class="keyword">this</span>), res(n);</span><br><span class="line">        res.init();</span><br><span class="line">        <span class="keyword">while</span>(k)&#123;</span><br><span class="line">            <span class="keyword">if</span>(k&amp;<span class="number">1</span>) res = res * A;</span><br><span class="line">            A = A * A;</span><br><span class="line">            k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x0,x1,a,b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld%lld"</span>,&amp;x0,&amp;x1,&amp;a,&amp;b);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s%lld"</span>,s,&amp;mod);</span><br><span class="line">    x0 %= mod, x1 %= mod, a %= mod, b %= mod;</span><br><span class="line">    <span class="function">matrix <span class="title">A</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    A.a[<span class="number">0</span>][<span class="number">0</span>] = a, A.a[<span class="number">0</span>][<span class="number">1</span>] = b;</span><br><span class="line">    A.a[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>, A.a[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//    for(int i=0;i&lt;1000000;i++) s[i] = rand()%10+'0';</span></span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="function">matrix <span class="title">res</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    res.init();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        res = res * (A ^ (s[n-i<span class="number">-1</span>]-<span class="string">'0'</span>));</span><br><span class="line">        A = A ^ <span class="number">10</span>;<span class="comment">//以十的次方为单位的快速幂</span></span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = (res.a[<span class="number">1</span>][<span class="number">0</span>] * x1 % mod + res.a[<span class="number">1</span>][<span class="number">1</span>] * x0 % mod) % mod;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
   	
 					
 	  </div>     
@@ -237,7 +236,7 @@
   
     <div class="none" id="search">
     <div class="header">
-        <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
+        <input type="text" placeholder="Typing Something here." id="search-input" class="input">
         
         <i id="search-cancel" class="iconfont icon-cancel"></i>
     </div>
@@ -253,31 +252,31 @@
          
             
 
-            <a class="mobile-menu-link" href="/">首页
+            <a class="mobile-menu-link" href="/">Home
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/archives">归档
+            <a class="mobile-menu-link" href="/archives">Archives
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/tags">标签
+            <a class="mobile-menu-link" href="/tags">Tags
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/about">关于
+            <a class="mobile-menu-link" href="/about">About
             </a>
             
          
                           
 
-            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            <a class="mobile-menu-link mobile-menu-search" href="#">Search </a>                 
             
          
       
