@@ -127,6 +127,112 @@
 	   
 	<div class="article-header">
 	    
+		<a class="title" href="/2019/09/10/牛客练习赛1083/">牛客练习赛1083</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Sep 10, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p>牛客练习<a href="https://ac.nowcoder.com/acm/contest/1083#question" target="_blank" rel="noopener">1083</a></p>
+<p><a href="https://ac.nowcoder.com/acm/contest/1083/B" target="_blank" rel="noopener">B题</a></p>
+<p>​        字符串常用套路：将所有后面的状态完全记录到到前一个中,找子序列就按照信息跳着找就行了。</p>
+<p>用dp[i][j]记录后面所有字母出现位置（如果遇到相同的字母，则保留里i位置近的出现位置）。</p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/比赛/">比赛</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/09/10/牛客练习赛1083/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="title" href="/2019/09/10/Educational-Codeforces-Round-72-Rated-for-Div-2/">Educational Codeforces Round 72 (Rated for Div. 2)</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Sep 10, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p><a href="https://codeforces.com/contest/1217" target="_blank" rel="noopener">Educational Codeforces Round 72 (Rated for Div. 2)</a></p>
+<p>B题：</p>
+<p>​        首先找最大值看一刀能不能砍死它，不能再处理，记得最后一刀砍最大的。</p>
+<p>​        时间复杂度：nlog(n)</p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/比赛/">比赛</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/09/10/Educational-Codeforces-Round-72-Rated-for-Div-2/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
 		<a class="title" href="/2019/09/07/Codeforces-Round-583/">Codeforces Round #583</a>  
 	       
 		 
@@ -562,119 +668,6 @@
 
 	
 	
-	
-	
-
-<article class="article">		
-	   
-	<div class="article-header">
-	    
-		<a class="title" href="/2019/07/23/Largest-Rectangle-In-a-Histigram/">Largest Rectangle In a Histigram</a>  
-	       
-		 
-
-		<div class="meta">
-			<time>Jul 23, 2019</time>			
-		</div>
-	</div>
-
-
-	
-
-    
-	<div class="typo article-excerpt">	
-		 
-			<p>POJ2559</p>
-<p><strong>思路</strong>：</p>
-<p>符合最大矩形必须满足:</p>
-<p>​            对于左边L：h[i[]&gt;h[i+1]    ,对于右边R:h[i]&gt;h[i+1]</p>
-<p>​            用L[i]记录最大矩形可以到最左边的坐标：</p>
-<p>​            L[i]=(j&lt;=i并且h[j-1]&lt;h的最大的j)            </p>
-<p>​            R[i]=(j&gt;i并且h[j]&gt;h[i]的最小的j)</p>
-<p>​            i从0开始往右，选取的比h[i]大的都为多余的数(就是可以选为最大的矩形的数），可以进行            忽略，只要记录可以到比h[i]大的最左的坐标，用单调栈来寻找选取数的左边离这个数最近的            坐标</p>
-<p>​            用R[i]记录最大矩形可以到的最右的坐标：</p>
-<p>​            i从最右开始往左，选取的比h[i]小的都为多余的数(就是可以选为最大的矩形的数），可以进            行忽略，只要记录可以到比h[i]大的最左的坐标，用单调栈来寻找选取数的右边离这个数最近            的坐标</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_N = <span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> h[max_N];</span><br><span class="line"><span class="keyword">int</span> L[max_N], R[max_N];</span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; sta;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t = <span class="number">0</span>;<span class="comment">//栈的大小</span></span><br><span class="line">	<span class="comment">//L:</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">while</span> (t &gt; <span class="number">0</span> &amp;&amp; h[i] &lt;= h[sta.top()]) &#123;</span><br><span class="line">			sta.pop(); t--;</span><br><span class="line">		&#125;</span><br><span class="line">		L[i] = (t == <span class="number">0</span>) ? <span class="number">0</span> :sta.top();</span><br><span class="line">		sta.push(i); t++;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	for (int i = 1; i &lt;= n; i++)</span></span><br><span class="line"><span class="comment">//		cout &lt;&lt; "L[" &lt;&lt; i &lt;&lt; "]:" &lt;&lt; L[i] &lt;&lt; " ";</span></span><br><span class="line"><span class="comment">//	cout &lt;&lt; endl &lt;&lt; endl;</span></span><br><span class="line">	<span class="keyword">while</span> (!sta.empty())sta.pop();</span><br><span class="line">	<span class="comment">//R:</span></span><br><span class="line">	t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;=<span class="number">0</span>; i--) &#123;</span><br><span class="line">		<span class="keyword">while</span> (t &gt; <span class="number">0</span> &amp;&amp; h[i] &lt;= h[sta.top()]) &#123;</span><br><span class="line">			sta.pop(); t--;</span><br><span class="line">		&#125;</span><br><span class="line">		R[i] = (t == <span class="number">0</span>) ? n : sta.top()<span class="number">-1</span>;</span><br><span class="line"><span class="comment">//-1是求矩形的边长时长度和数值的关系，只能减去右边的，因为可能左边为0，右边为数值</span></span><br><span class="line">		sta.push(i); t++;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	for (int i = 1; i &lt;= n; i++)</span></span><br><span class="line"><span class="comment">//		cout &lt;&lt; "R[" &lt;&lt; i &lt;&lt; "]:" &lt;&lt; R[i] &lt;&lt; " ";</span></span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		res = max(res,(ll) h[i] * (R[i] - L[i]));</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n&amp;&amp;n!=<span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; h[i];</span><br><span class="line">		solve();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">7</span></span><br><span class="line"><span class="comment">2 1 4 5 1 3 3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-		  	  
-	</div>
-
-
-
-	<div class="article-categories">
-	 
-	</div>
-	
-
-	<div class="article-tags">
-		
-			<i class="iconfont icon-tags" style="margin-right:4px"></i>
-			            
-				<a class="link" href="/tags/单调栈/">单调栈</a>           
-			
-		
-	</div>
-
-	<div class="article-bottom">
-		<a class="readmore" href="/2019/07/23/Largest-Rectangle-In-a-Histigram/">Continue</a> 	
-	</div>	
-    
-</article>
-
-	
-	
-	
-	
-
-<article class="article">		
-	   
-	<div class="article-header">
-	    
-		<a class="title" href="/2019/07/21/牛客多校round-2-F题/">牛客多校round_2 F题</a>  
-	       
-		 
-
-		<div class="meta">
-			<time>Jul 21, 2019</time>			
-		</div>
-	</div>
-
-
-	
-
-    
-	<div class="typo article-excerpt">	
-		 
-			<p><img src="/images/placeholder.png" alt data-src="https://bigboomclap.oss-cn-shenzhen.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/006mSGrUly1g57j8kxa7cj30q10nj0u8.jpg" class="lazyload"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_n = <span class="number">40</span>;</span><br><span class="line">ll val[max_n][max_n];</span><br><span class="line">ll cost = <span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> state,ll cost,<span class="keyword">int</span> pre,<span class="keyword">int</span> got)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (got + got == n) &#123;</span><br><span class="line">		ans = max(ans, cost); <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n - pre - <span class="number">1</span> + got &lt; n / <span class="number">2</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="comment">//对于构不成n/2的情况，直接进行剪枝</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> next = pre + <span class="number">1</span>; next &lt; n; next++) &#123;</span><br><span class="line">	<span class="comment">//对于每一个next分支，都进行了递归，所以包含了所有情况</span></span><br><span class="line">		ll next_cost = cost;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> ((state &gt;&gt; i) &amp; <span class="number">1</span>)</span><br><span class="line">				next_cost -= val[next][i];</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				next_cost += val[next][i];</span><br><span class="line">		&#125;</span><br><span class="line">		solve(state | (<span class="number">1</span> &lt;&lt; next), next_cost, next, got + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	n &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">			scanf_s( <span class="string">"%lld"</span>,&amp;val[i][j]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		cost += val[<span class="number">0</span>][i];</span><br><span class="line">	solve((<span class="number">1</span>&lt;&lt;<span class="number">0</span>), cost, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-		  	  
-	</div>
-
-
-
-	<div class="article-categories">
-	 
-	</div>
-	
-
-	<div class="article-tags">
-		
-			<i class="iconfont icon-tags" style="margin-right:4px"></i>
-			            
-				<a class="link" href="/tags/brute-force/">brute force</a>           
-			
-		
-	</div>
-
-	<div class="article-bottom">
-		<a class="readmore" href="/2019/07/21/牛客多校round-2-F题/">Continue</a> 	
-	</div>	
-    
-</article>
-
-	
-	
 
 	
 	
@@ -682,7 +675,7 @@
    <nav class="paginator">
     
 
-   <span class="page-number"> Page <strong>1</strong>, Posts <strong>12</strong>. </span>
+   <span class="page-number"> Page <strong>1</strong>, Posts <strong>14</strong>. </span>
 
     
         <a class="next" href="/page/2/"> 
