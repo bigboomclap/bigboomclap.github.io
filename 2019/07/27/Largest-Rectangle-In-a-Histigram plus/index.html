@@ -98,7 +98,7 @@
 			
 			
 				<i class="iconfont icon-words"></i>
-				<span class="words">1148
+				<span class="words">1149
 				</span>
 			
 		</div>
@@ -141,6 +141,7 @@
 <p>（4）如果a[i]小于根节点R，则将a[i]作为根节点R的父节点</p>
 <p>（5）如果a[i]大于根节点R，则将a[i]从根节点的右节点开始寻找位置</p>
 <p>（6）从右寻找的逻辑同根节点的对比方法</p>
+<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 1e18</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F(i,a) for(int i=1;i&lt;=a;i++)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_n = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> a[max_n],n;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> r, l, par;</span><br><span class="line">&#125;tree[max_n];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> top = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">while</span> (!s.empty() &amp;&amp; a[i] &lt; a[s.top()]) &#123;</span><br><span class="line">			top = s.top();</span><br><span class="line">			s.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (!s.empty()) &#123;</span><br><span class="line">			tree[s.top()].r = i;</span><br><span class="line">			tree[i].par = s.top();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (top != <span class="number">-1</span>) &#123;</span><br><span class="line">			tree[top].par = i;</span><br><span class="line">			tree[i].l = top;</span><br><span class="line">		&#125;</span><br><span class="line">		s.push(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> root = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span> (!s.empty()) &#123;</span><br><span class="line">		root = s.top();</span><br><span class="line">		s.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	F(i,n)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	<span class="keyword">int</span> root=build();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; root &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">if</span> (root != <span class="number">-1</span>)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"build the tree sccessfully!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">11</span></span><br><span class="line"><span class="comment">9 3 7 1 8 12 10 20 15 18 5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
   	
 					
@@ -249,7 +250,7 @@
   
     <div class="none" id="search">
     <div class="header">
-        <input type="text" placeholder="Typing Something here." id="search-input" class="input">
+        <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
         
         <i id="search-cancel" class="iconfont icon-cancel"></i>
     </div>
@@ -265,31 +266,31 @@
          
             
 
-            <a class="mobile-menu-link" href="/">Home
+            <a class="mobile-menu-link" href="/">首页
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/archives">Archives
+            <a class="mobile-menu-link" href="/archives">归档
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/tags">Tags
+            <a class="mobile-menu-link" href="/tags">标签
             </a>
             
          
             
 
-            <a class="mobile-menu-link" href="/about">About
+            <a class="mobile-menu-link" href="/about">关于
             </a>
             
          
                           
 
-            <a class="mobile-menu-link mobile-menu-search" href="#">Search </a>                 
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
             
          
       
