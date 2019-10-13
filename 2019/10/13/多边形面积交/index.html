@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  多边形面积交 |   Qinli </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header-wrapper">
+
+  <nav class="inner">
+    <div class="title">
+      <a href="/">
+        <img class="logo" src="/images/logo.png">
+      </a>
+    </div>
+
+    <ul class="menu">
+      
+      
+      <li class="item">
+        <a class="link" id="menu-home" href="/">
+          <i class="iconfont icon-home">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-archives" href="/archives">
+          <i class="iconfont icon-archives">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-tags" href="/tags">
+          <i class="iconfont icon-tags">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-about" href="/about">
+          <i class="iconfont icon-about">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-search">
+          <i class="iconfont icon-search">
+        </i></a>
+        
+
+        
+      
+    </li></ul>
+  </nav>
+</header>
+
+<header class="mobile-header-wrapper">
+  <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+</header>   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post slideDownMin">
+  
+	
+<div class="header">
+		<p class="title">	
+			多边形面积交
+		</p>
+		<div class="info">	
+			<time>
+				Oct 13, 2019
+			</time>
+
+			
+			
+				<i class="iconfont icon-words"></i>
+				<span class="words">2800
+				</span>
+			
+		</div>
+</div> 
+	
+
+    <script type="text/x-mathjax-config">
+        var post = document.getElementsByClassName("post")[0];  
+        MathJax.Hub.Config({
+            showProcessingMessages: false,
+            messageStyle: "none",    
+            tex2jax: {
+                inlineMath:  [ ["$", "$"] , ["\\(","\\)"]],
+                displayMath: [ ["$$","$$"] , ["\\[","\\]"]],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+            },
+            "HTML-CSS": {            
+                showMathMenu: false
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,post]);
+    </script>
+    <style>.MathJax{outline:0;}</style>
+
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ 
+
+	  <div class="typo post-content ">
+
+		
+
+			
+					<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 510  </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sig</span><span class="params">(<span class="keyword">double</span> d)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (d &gt; eps) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> d &lt; -eps ? <span class="number">-1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y; Point() &#123;&#125;</span><br><span class="line">	Point(<span class="keyword">double</span> x, <span class="keyword">double</span> y) :x(x), y(y) &#123;&#125;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>==(<span class="keyword">const</span> Point&amp; p)<span class="keyword">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> sig(x - p.x) == <span class="number">0</span> &amp;&amp; sig(y - p.y) == <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cross</span><span class="params">(Point o, Point a, Point b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span>(a.x - o.x) * (b.y - o.y) - (b.x - o.x) * (a.y - o.y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">area</span><span class="params">(Point* ps, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	ps[n] = ps[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">double</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		res += ps[i].x * ps[i + <span class="number">1</span>].y - ps[i].y * ps[i + <span class="number">1</span>].x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res / <span class="number">2.0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lineCross</span><span class="params">(Point a, Point b, Point c, Point d, Point&amp; p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">double</span> s1, s2;</span><br><span class="line">	s1 = cross(a, b, c);</span><br><span class="line">	s2 = cross(a, b, d);</span><br><span class="line">	<span class="keyword">if</span> (sig(s1) == <span class="number">0</span> &amp;&amp; sig(s2) == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">if</span> (sig(s2 - s1) == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	p.x = (c.x * s2 - d.x * s1) / (s2 - s1);</span><br><span class="line">	p.y = (c.y * s2 - d.y * s1) / (s2 - s1);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//多边形切割  </span></span><br><span class="line"><span class="comment">//用直线ab切割多边形p，切割后的在向量(a,b)的左侧，并原地保存切割结果  </span></span><br><span class="line"><span class="comment">//如果退化为一个点，也会返回去,此时n为1  </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">polygon_cut</span><span class="params">(Point* p, <span class="keyword">int</span>&amp; n, Point a, Point b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> Point pp[maxn];</span><br><span class="line">	<span class="keyword">int</span> m = <span class="number">0</span>; p[n] = p[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (sig(cross(a, b, p[i])) &gt; <span class="number">0</span>) pp[m++] = p[i];</span><br><span class="line">		<span class="keyword">if</span> (sig(cross(a, b, p[i])) != sig(cross(a, b, p[i + <span class="number">1</span>])))</span><br><span class="line">			lineCross(a, b, p[i], p[i + <span class="number">1</span>], pp[m++]);</span><br><span class="line">	&#125;</span><br><span class="line">	n = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">		<span class="keyword">if</span> (!i || !(pp[i] == pp[i - <span class="number">1</span>]))</span><br><span class="line">			p[n++] = pp[i];</span><br><span class="line">	<span class="keyword">while</span> (n &gt; <span class="number">1</span> &amp;&amp; p[n - <span class="number">1</span>] == p[<span class="number">0</span>])n--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//---------------华丽的分隔线-----------------//  </span></span><br><span class="line"><span class="comment">//返回三角形oab和三角形ocd的有向交面积,o是原点//  </span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">intersectArea</span><span class="params">(Point a, Point b, Point c, Point d)</span> </span>&#123;</span><br><span class="line">	<span class="function">Point <span class="title">o</span><span class="params">(<span class="number">0</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">int</span> s1 = sig(cross(o, a, b));</span><br><span class="line">	<span class="keyword">int</span> s2 = sig(cross(o, c, d));</span><br><span class="line">	<span class="keyword">if</span> (s1 == <span class="number">0</span> || s2 == <span class="number">0</span>)<span class="keyword">return</span> <span class="number">0.0</span>;<span class="comment">//退化，面积为0  </span></span><br><span class="line">	<span class="keyword">if</span> (s1 == <span class="number">-1</span>) swap(a, b);</span><br><span class="line">	<span class="keyword">if</span> (s2 == <span class="number">-1</span>) swap(c, d);</span><br><span class="line">	Point p[<span class="number">10</span>] = &#123; o,a,b &#125;;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">3</span>;</span><br><span class="line">	polygon_cut(p, n, o, c);</span><br><span class="line">	polygon_cut(p, n, c, d);</span><br><span class="line">	polygon_cut(p, n, d, o);</span><br><span class="line">	<span class="keyword">double</span> res = <span class="built_in">fabs</span>(area(p, n));</span><br><span class="line">	<span class="keyword">if</span> (s1 * s2 == <span class="number">-1</span>) res = -res; <span class="keyword">return</span> res*<span class="number">1.00</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求两多边形的交面积  </span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">intersectArea</span><span class="params">(Point* ps1, <span class="keyword">int</span> n1, Point* ps2, <span class="keyword">int</span> n2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (area(ps1, n1) &lt; <span class="number">0</span>) reverse(ps1, ps1 + n1);</span><br><span class="line">	<span class="keyword">if</span> (area(ps2, n2) &lt; <span class="number">0</span>) reverse(ps2, ps2 + n2);</span><br><span class="line">	ps1[n1] = ps1[<span class="number">0</span>];</span><br><span class="line">	ps2[n2] = ps2[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">double</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n2; j++) &#123;</span><br><span class="line">			res += intersectArea(ps1[i], ps1[i + <span class="number">1</span>], ps2[j], ps2[j + <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res * <span class="number">1.00</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//n1=3,n2=4此处是三角形和矩形的交</span></span><br><span class="line">Point ps1[maxn], ps2[maxn];</span><br><span class="line"><span class="keyword">int</span> n1, n2;<span class="comment">//几边形</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(<span class="number">18</span>);</span><br><span class="line">	n1 = <span class="number">3</span>, n2 = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">double</span> a, b, c, d, e, f, g, h;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d &gt;&gt; e &gt;&gt; f &gt;&gt; g &gt;&gt; h) &#123;</span><br><span class="line">		ps1[<span class="number">0</span>].x = a, ps1[<span class="number">0</span>].y = b,</span><br><span class="line">			ps1[<span class="number">1</span>].x = c, ps1[<span class="number">1</span>].y= b,</span><br><span class="line">			ps1[<span class="number">2</span>].x = a, ps1[<span class="number">2</span>].y = d;</span><br><span class="line">		ps2[<span class="number">0</span>].x = e, ps2[<span class="number">0</span>].y = f,</span><br><span class="line">			ps2[<span class="number">1</span>].x = g, ps2[<span class="number">1</span>].y = f,</span><br><span class="line">			ps2[<span class="number">2</span>].x = g, ps2[<span class="number">2</span>].y = h,</span><br><span class="line">			ps2[<span class="number">3</span>].x = e, ps2[<span class="number">3</span>].y = h;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">abs</span>(intersectArea(ps1, n1, ps2, n2)) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  	
+					
+	  </div>     
+	  
+
+	<div class="bottom">
+  <div class="other">
+    <div class="meta">
+      
+
+      
+      <i class="iconfont icon-tag"></i>
+      <a class="tag-link" href="/tags/Computing-Geometry/">Computing Geometry</a>
+      
+    </div>
+
+    <div class="operate">
+      
+      <span class="text">Share</span>
+      <ul class="share">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		item"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		item"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		item"></li>		
+   	   
+</ul>	
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      
+    </div>
+  </div>
+
+
+  
+  <nav class="nav">
+    <div class="link">
+      
+      <a href="/2019/10/13/归并排序/" class="link-wrap">
+        <strong class="caption">older</strong>
+        
+        <span class="title">
+          归并排序
+        </span>
+      </a>
+      
+    </div>
+    <div class="link">
+      
+    </div>
+  </nav>
+  
+</div> 
+	
+<div class="comment">
+
+    
+
+    <div id="comment">
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src="//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js"></script>
+
+    <script>
+        new Valine({
+            el: '#comment',
+            notify: false,
+            verify: false,
+            app_id: 'cFM0eCo0CQ9xmBXmHi1eltol-gzGzoHsz',
+            app_key: 'oh9tizsnvV2vNvWgqEvoNtQO',
+            path: window.location.pathname,
+            avatar: 'mm',
+            guest_info: ['nick', 'mail']
+        });
+    </script>
+    
+</div>	
+</article>
+
+          </div> 
+      </div>            
+    
+        <i id="toTop" class="iconfont icon-backtotop"></i>
+
+  
+    <div class="none" id="search">
+    <div class="header">
+        <input type="text" placeholder="Typing Something here." id="search-input" class="input">
+        
+        <i id="search-cancel" class="iconfont icon-cancel"></i>
+    </div>
+
+    <div id="search-result" class="result"></div>
+</div>
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">Home
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">Archives
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">Tags
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">About
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">Search </a>                 
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+<footer class="footer">
+	<div class="inner">
+		<div class="copyright">
+			&copy;
+			
+			2019
+			Qinli
+
+			<br>
+			By <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>
+	</div>
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
+</html>
