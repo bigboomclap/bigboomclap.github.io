@@ -127,6 +127,308 @@
 	   
 	<div class="article-header">
 	    
+		<a class="title" href="/2019/07/27/Largest-Rectangle-In-a-Histigram plus/">Largest Rectangle In a Histigram Plus</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Jul 27, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p><img src="https://bigboomclap.oss-cn-shenzhen.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/9d74e2c8447938ef046a26300004712c.png" alt></p>
+<p>笛卡尔树：</p>
+<p>​    她的节点的值满足堆得性质，而她节点的下标满足二叉搜索树的性质。</p>
+<p>笛卡尔树的构造：</p>
+<p>（1）从第一个元素开始，从左往右遍历数组L</p>
+<p>（2）将元素L[0]作为树的根节点R</p>
+<p>（3）for i in [a[1], a[2]…a[n]]</p>
+<p>（4）如果a[i]小于根节点R，则将a[i]作为根节点R的父节点</p>
+<p>（5）如果a[i]大于根节点R，则将a[i]从根节点的右节点开始寻找位置</p>
+<p>（6）从右寻找的逻辑同根节点的对比方法</p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/笛卡尔树/">笛卡尔树</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/07/27/Largest-Rectangle-In-a-Histigram plus/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="title" href="/2019/07/24/背包问题/">背包问题</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Jul 24, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p>最基础的背包问题：</p>
+<p>思路：从第1个开始往前选</p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/dynamic-programming/">dynamic programming</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/07/24/背包问题/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="title" href="/2019/07/23/Largest-Rectangle-In-a-Histigram/">Largest Rectangle In a Histigram</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Jul 23, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p>POJ2559</p>
+<p><strong>思路</strong>：</p>
+<p>符合最大矩形必须满足:</p>
+<p>​            对于左边L：h[i[]&gt;h[i+1]    ,对于右边R:h[i]&gt;h[i+1]</p>
+<p>​            用L[i]记录最大矩形可以到最左边的坐标：</p>
+<p>​            L[i]=(j&lt;=i并且h[j-1]&lt;h的最大的j)            </p>
+<p>​            R[i]=(j&gt;i并且h[j]&gt;h[i]的最小的j)</p>
+<p>​            i从0开始往右，选取的比h[i]大的都为多余的数(就是可以选为最大的矩形的数），可以进行            忽略，只要记录可以到比h[i]大的最左的坐标，用单调栈来寻找选取数的左边离这个数最近的坐标</p>
+<p>​            用R[i]记录最大矩形可以到的最右的坐标：</p>
+<p>​            i从最右开始往左，选取的比h[i]小的都为多余的数(就是可以选为最大的矩形的数），可以进            行忽略，只要记录可以到比h[i]大的最左的坐标，用单调栈来寻找选取数的右边离这个数最近的坐标</p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/单调栈/">单调栈</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/07/23/Largest-Rectangle-In-a-Histigram/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="title" href="/2019/07/21/牛客多校round-2-F题/">牛客多校round_2 F题</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Jul 21, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p><img src="https://bigboomclap.oss-cn-shenzhen.aliyuncs.com/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/006mSGrUly1g57j8kxa7cj30q10nj0u8.jpg" alt></p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/brute-force/">brute force</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/07/21/牛客多校round-2-F题/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
+		<a class="title" href="/2019/07/16/Blocks/">Blocks</a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Jul 16, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p>POJ 3734,又称红色病毒问题</p>
+<p><strong>思路：</strong></p>
+<p>​                假设染色到第i个方块，红绿色都为偶数情况共有$a_i$,红绿色恰有一个为偶数为$b_i$,红绿色都为                奇数情况共有$c_i$</p>
+<p>对于i+1：</p>
+<script type="math/tex; mode=display">
+a_{i+1}=2*a_i+b_i\\
+b_{i+1}=2*a_i+b_i+2*c_i\\
+c_{i+1}=b_i+2*c_i</script><p>矩阵递推式：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\left[
+\begin{array}{cccc}
+ a_{i+1}\\
+ b_{i+1}\\
+c_{i+1} 
+\end{array}
+\right ]
+=
+\left[
+\begin{array}{cccc}
+ 2 &1 & 0\\
+2 &1& 2\\
+0& 1 &2
+\end{array}
+\right ]
+\left[
+\begin{array}{cccc}
+ a_i\\
+ b_i\\
+ c_i
+\end{array}
+\right ]
+
+\end{equation}</script>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/矩阵的幂/">矩阵的幂</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/07/16/Blocks/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
 		<a class="title" href="/2019/07/15/travel-saleman-problem/">Travel Salesman Problem</a>  
 	       
 		 
@@ -191,7 +493,7 @@
         </a>
     
 
-   <span class="page-number"> Page <strong>3</strong>, Posts <strong>21</strong>. </span>
+   <span class="page-number"> Page <strong>3</strong>, Posts <strong>26</strong>. </span>
 
     
   </nav> 

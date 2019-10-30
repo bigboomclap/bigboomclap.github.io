@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
   
-  <title>  模拟退火 |   Qinli </title>
+  <title>  三分法 |   Qinli </title>
 
  
   
@@ -88,7 +88,7 @@
 	
 <div class="header">
 		<p class="title">	
-			模拟退火
+			三分法
 		</p>
 		<div class="info">	
 			<time>
@@ -98,7 +98,7 @@
 			
 			
 				<i class="iconfont icon-words"></i>
-				<span class="words">947
+				<span class="words">198
 				</span>
 			
 		</div>
@@ -131,10 +131,9 @@
 		
 
 			
-					<p>南京2018ccpc区域赛：</p>
-<p><a href="https://www.cnblogs.com/zhangbuang/p/11228015.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhangbuang/p/11228015.html</a></p>
-<a id="more"></a> 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> eps = <span class="number">1e-5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y, z;</span><br><span class="line">&#125;p[maxn];</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dis</span><span class="params">(node p,node p1)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">sqrt</span>((p.x-p1.x)* (p.x - p1.x)+ (p.y - p1.y)* (p.y - p1.y)+ (p.z - p1.z)* (p.z - p1.z));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> T_start = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> rate = <span class="number">0.98</span>;</span><br><span class="line"><span class="keyword">int</span> T=T_start;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) 	<span class="built_in">cin</span> &gt;&gt; p[i].x &gt;&gt; p[i].y &gt;&gt; p[i].z;</span><br><span class="line">	node ans_p = &#123; <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">double</span> ans = <span class="number">1e18</span>;</span><br><span class="line">	<span class="keyword">while</span> (T &gt; eps) &#123;</span><br><span class="line">		node p_max = p[<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (dis(ans_p, p[i]) &gt; dis(ans_p, p_max))</span><br><span class="line">				p_max = p[i];</span><br><span class="line">		&#125;</span><br><span class="line">		ans = min(ans, dis(ans_p, p_max));</span><br><span class="line">		ans_p.x += (p_max.x - ans_p.x) * T / T_start;</span><br><span class="line">		ans_p.y += (p_max.y - ans_p.y) * T / T_start;</span><br><span class="line">		ans_p.z += (p_max.z - ans_p.z) * T / T_start;</span><br><span class="line">        <span class="comment">//以一定概率向目前最大的那个点走一点点</span></span><br><span class="line">		T *= rate;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+					<a id="more"></a>
+<p>找凸函数或者是凹函数的极值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &gt;= r)	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> midl = (l + r) &gt;&gt; <span class="number">1</span>, midr = (midl + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (sum_[midl] &gt; sum_[midr])	<span class="keyword">return</span> find(l, midl,v);</span><br><span class="line">	<span class="keyword">return</span> find(midr, r, v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   	
 					
 	  </div>     
@@ -147,7 +146,7 @@
 
       
       <i class="iconfont icon-tag"></i>
-      <a class="tag-link" href="/tags/模拟退火/">模拟退火</a>
+      <a class="tag-link" href="/tags/三分/">三分</a>
       
     </div>
 
@@ -183,22 +182,22 @@
   <nav class="nav">
     <div class="link">
       
-      <a href="/2019/10/18/赌徒破产模型/" class="link-wrap">
+      <a href="/2019/10/30/八皇后/" class="link-wrap">
         <strong class="caption">older</strong>
         
         <span class="title">
-          赌徒破产模型
+          八皇后
         </span>
       </a>
       
     </div>
     <div class="link">
       
-      <a href="/2019/10/30/八皇后/" class="link-wrap">
+      <a href="/2019/10/30/迷宫问题/" class="link-wrap">
         <strong class="caption">newer</strong>
         
         <span class="title">
-          八皇后
+          迷宫问题
         </span>
       </a>
       
