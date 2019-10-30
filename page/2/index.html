@@ -127,6 +127,59 @@
 	   
 	<div class="article-header">
 	    
+		<a class="title" href="/2019/08/31/Codeforces-Round-582/">Codeforces Round #582 </a>  
+	       
+		 
+
+		<div class="meta">
+			<time>Aug 31, 2019</time>			
+		</div>
+	</div>
+
+
+	
+
+    
+	<div class="typo article-excerpt">	
+		
+			<p><a href="https://codeforces.com/contest/1213" target="_blank" rel="noopener">Codeforces Round #582 </a>小结</p>
+<p>D2题解：</p>
+<p>​        将所有的数一直除2的次方，直到该数为0，保存每一次出现的数字和对应花费的次数（用小根堆保存）。最后，将所有可能出现的数的花费遍历一遍，找最小值。</p>
+<p>​        时间复杂度：n+log（n）</p>
+		  	  
+	</div>
+
+
+
+	<div class="article-categories">
+	 
+	</div>
+	
+
+	<div class="article-tags">
+		
+			<i class="iconfont icon-tags" style="margin-right:4px"></i>
+			            
+				<a class="link" href="/tags/比赛/">比赛</a>           
+			
+		
+	</div>
+
+	<div class="article-bottom">
+		<a class="readmore" href="/2019/08/31/Codeforces-Round-582/">Continue</a> 	
+	</div>	
+    
+</article>
+
+	
+	
+	
+	
+
+<article class="article">		
+	   
+	<div class="article-header">
+	    
 		<a class="title" href="/2019/08/13/Round-Corridor-by-codeforces/">Round Corridor by codeforces</a>  
 	       
 		 
@@ -630,65 +683,6 @@ c_{i+1}
 
 	
 	
-	
-	
-
-<article class="article">		
-	   
-	<div class="article-header">
-	    
-		<a class="title" href="/2019/07/15/travel-saleman-problem/">Travel Salesman Problem</a>  
-	       
-		 
-
-		<div class="meta">
-			<time>Jul 15, 2019</time>			
-		</div>
-	</div>
-
-
-	
-
-    
-	<div class="typo article-excerpt">	
-		 
-			<a id="more"></a>
-<p><strong>思路：</strong></p>
-<p>​        共有（n-1)！路径情况，NP难度问题</p>
-<p>​        假设现在将已经访问过的顶点集合（顶点0当做还未访问）为S，当前所在顶点为v</p>
-<p>​        dp[S][v] = min { dp[S U {u}][u] + d(v,u) | u不属于S}</p>
-<p>​        状态压缩：数组下标为集合，编码一个整数或定义一个全序列关系并用二叉搜索树储存，        方便记忆搜索。对于集合，把每个元素选取与否对应到一个二进制位，从而把状态压缩成一个整数。</p>
-<!--more-->
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 1e9</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> max_n = <span class="number">15</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> d[max_n][max_n];<span class="comment">//从v点出发访问剩余所有的点，v-&gt;u(u不属于s)</span></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1</span> &lt;&lt; max_n][max_n];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rec</span><span class="params">(<span class="keyword">int</span> S, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line"><span class="comment">//已经访问过的节点集合为S，当前位置为v</span></span><br><span class="line">	<span class="keyword">if</span> (dp[S][v] &gt;= <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> dp[S][v];</span><br><span class="line">	<span class="keyword">if</span> (S == (<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span> &amp;&amp; v == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> dp[S][v] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> res = inf;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; n; u++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!(S &gt;&gt; u &amp; <span class="number">1</span>))</span><br><span class="line">            	res = min(res, rec(S | <span class="number">1</span> &lt;&lt; u, u) + d[v][u]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[S][v] = res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve_rec</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dp, <span class="number">-1</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; rec(<span class="number">0</span>, <span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve_dp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> S = <span class="number">0</span>; S &lt; <span class="number">1</span> &lt;&lt; n; S++)</span><br><span class="line">		fill(dp[S], dp[S] + n,inf);</span><br><span class="line">	dp[(<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> S = (<span class="number">1</span> &lt;&lt; n) - <span class="number">2</span>; S &gt;= <span class="number">0</span>; S--)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; n; v++)</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; n; u++)</span><br><span class="line">				<span class="keyword">if</span> (!(S &gt;&gt; u &amp; <span class="number">1</span>))</span><br><span class="line">					dp[S][v] = min(dp[S][v], dp[(<span class="number">1</span> &lt;&lt; u) | S][u] + d[v][u]);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; dp[<span class="number">0</span>][<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> m = <span class="number">8</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">6</span>; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">6</span>; j++)</span><br><span class="line">			d[i][j] =inf;</span><br><span class="line">	<span class="keyword">while</span> (m--) &#123;</span><br><span class="line">		<span class="keyword">int</span> from, to, cost;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; from &gt;&gt; to &gt;&gt; cost;</span><br><span class="line">		d[from][to] = cost;</span><br><span class="line">	&#125;</span><br><span class="line">	solve_rec();</span><br><span class="line">    solve_dp();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">/*</span></span><br><span class="line"><span class="comment">测试数据：</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">0 1 3</span></span><br><span class="line"><span class="comment">1 2 5</span></span><br><span class="line"><span class="comment">2 0 4</span></span><br><span class="line"><span class="comment">2 3 5</span></span><br><span class="line"><span class="comment">3 4 3</span></span><br><span class="line"><span class="comment">4 0 7</span></span><br><span class="line"><span class="comment">0 3 4</span></span><br><span class="line"><span class="comment">4 1 6*/</span></span><br></pre></td></tr></table></figure>
-<p>​        </p>
-
-		  	  
-	</div>
-
-
-
-	<div class="article-categories">
-	 
-	</div>
-	
-
-	<div class="article-tags">
-		
-			<i class="iconfont icon-tags" style="margin-right:4px"></i>
-			            
-				<a class="link" href="/tags/状态压缩DP/">状态压缩DP</a>           
-			
-		
-	</div>
-
-	<div class="article-bottom">
-		<a class="readmore" href="/2019/07/15/travel-saleman-problem/">Continue</a> 	
-	</div>	
-    
-</article>
-
-	
-	
 
 	
 	
@@ -701,8 +695,13 @@ c_{i+1}
         </a>
     
 
-   <span class="page-number"> Page <strong>2</strong>, Posts <strong>20</strong>. </span>
+   <span class="page-number"> Page <strong>2</strong>, Posts <strong>21</strong>. </span>
 
+    
+        <a class="next" href="/page/3/"> 
+            Next
+            <i class="iconfont icon-right"></i>
+        </a>
     
   </nav> 
 
